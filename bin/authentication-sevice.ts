@@ -8,7 +8,8 @@ export interface IAuthenticationSeviceStackProps extends StackProps {
 }
 
 const suffix =
-  process.env.CURRENT_BRANCH || `local-${process.env.LOCAL_BRANCH_AUTHOR}`;
+  process.env.GITHUB_REF?.split("/").pop() ||
+  `local-${process.env.LOCAL_BRANCH_AUTHOR}`;
 
 const stackProps: IAuthenticationSeviceStackProps = {
   currentBranch: suffix,
