@@ -33,11 +33,11 @@ jobs:
 
       - name: Print environment variables
         run: |
-          echo "CDK_DEFAULT_REGION: ${{ env.CDK_DEFAULT_REGION }}"
+          echo "CDK_DEFAULT_REGION: ${{ vars.CDK_DEFAULT_REGION }}"
 
       - name: Deploy CDK stack
         run: cdk deploy --require-approval never
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_DEFAULT_REGION: ${{ env.CDK_DEFAULT_REGION }}
+          AWS_DEFAULT_REGION: ${{ vars.CDK_DEFAULT_REGION }}
