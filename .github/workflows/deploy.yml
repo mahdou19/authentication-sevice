@@ -40,10 +40,6 @@ jobs:
       - name: Install project dependencies
         run: npm install
 
-      - name: Print environment variables
-        run: |
-          echo "CDK_DEFAULT_REGION: ${{ vars.CDK_DEFAULT_REGION }}"
-
       - name: Deploy CDK stack
         run: cdk deploy --require-approval never
         env:
