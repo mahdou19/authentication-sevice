@@ -2,8 +2,10 @@ name: Deploy AuthService
 
 on:
   push:
+  pull_request:
     branches:
       - develop
+      - main
 
 jobs:
   deploy:
