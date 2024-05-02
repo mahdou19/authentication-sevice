@@ -16,7 +16,8 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: "14"
+          node-version: 18
+          cache: npm
 
       - name: Install AWS CLI
         run: |
